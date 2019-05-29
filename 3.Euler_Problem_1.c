@@ -16,10 +16,13 @@ int main() {
     
     while (i * i <= num) {
         if(num % i == 0) ans = i;
-        while (num % i == 0) num /= i;
+        while (num % i == 0) num /= i;  //剔除所有i因子
         i++;
     }
-    if
+
+    if (num != 1) ans = num;     //需要证明
+    //暂时的想法：剔除了所有小于根号n的因子，剩下的数字如果不是1，就一定是大于根号n的最大的质因子。 也就是说到这一步之前，ans中存储的是小于根号n的最大的质因子。
+    printf("%lld\n", ans);
 
 
     return 0;
