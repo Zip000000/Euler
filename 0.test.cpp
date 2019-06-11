@@ -12,9 +12,6 @@ using namespace std;
 #define MAX_N 4000000
 
 int main() {
-
-
-
         int fib[2] = {1, 1}, n = 2, ans = 0;
     while (fib[(n - 1) % 2] <= MAX_N) {
                 if (fib[(n - 1) % 2] % 2 == 0) ans += fib[(n - 1) % 2];
