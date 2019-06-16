@@ -8,6 +8,9 @@
 #include<stdio.h>
 // 自己写一个推导任意次方的求和公式
 int main() {
-    int sum1 = 0,
+    int sum1 = 0, sum2 = 0;
+    sum1 = 5050;
+    sum2 = (2 * (100 * 100 * 100) + 3 * (100 * 100) + 100) / 6;
+    printf("%d\n", sum1 * sum1 - sum2);
     return 0;
 }

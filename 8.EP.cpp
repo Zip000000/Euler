@@ -1,22 +1,24 @@
 /*************************************************************************
-	> File Name: 31.EP.cpp
+	> File Name: 8.EP.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年06月15日 星期六 20时36分23秒
+	> Created Time: 2019年06月16日 星期日 10时21分46秒
  ************************************************************************/
 
 #include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<vector>
+#include<map>
+#include<cmath>
 using namespace std;
-    
-    
-int a[8] = {1, 2, 5, 10, 20, 50, 100, 200};
-int f[8][205];
-
 
 int main() {
-        
-
-
+    
+    
+    
     
     
     return 0;
