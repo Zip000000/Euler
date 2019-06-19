@@ -40,9 +40,9 @@ int main() {
         for (int j = n - 1; j >= 1; j--) {
             pj = p(j);
             if(pk - pj >= D) break;
+            
             int ind1 = binary_search(p, 2 * n, pk + pj);
             int ind2 = binary_search(p, n, pk - pj);
-    //cout << pj <<" " << pk << " " << D << endl;
             if(ind1 && ind2) {
                 D = pk - pj;
             }
@@ -52,3 +52,5 @@ int main() {
     cout << pj <<" " << pk << " " << D << endl;
     return 0;
 }
+            //printf("p%lld = %lld  p%d = %lld\n", n, pk, j, pj);
+    //cout << pj <<" " << pk << " " << D << endl;
