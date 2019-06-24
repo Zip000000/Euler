@@ -41,9 +41,13 @@ int main() {
             }
         }
     }
-    for(int i = 2 ; i <= 100; i++) {
+
+    int sum = 0;
+    for(int i = 2 ; i <= 10000; i++) {
         printf("F[%d] = %d\n", i, f[i]);
+        sum += f[i];
     }
+    printf("%d\n", sum);
 
 
     
@@ -59,6 +63,7 @@ int main() {
         if(f_nums > 500) break;
         n++;
     }
+    printf("%lld\n", n);
     cout << n * (n + 1) / 2 <<endl;
 
     
