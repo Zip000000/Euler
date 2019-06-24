@@ -46,7 +46,6 @@ int main() {
     }
 
 
-
     
 
     long long n = 1;

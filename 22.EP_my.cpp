@@ -17,7 +17,7 @@ using namespace std;
 
 void get_namelist(char namelist[][50]) {
     int i = 0;
-    while(scanf("\"%s\",", namelist[i]) != EOF) {
+    while(scanf("%s,", namelist[i]) != EOF) {
         i++;
     }
 }
@@ -30,7 +30,8 @@ void print(char namelist[][50]) {
 int main() {
     char namelist[6000][50];
     get_namelist(namelist);
-    print(namelist);
+    //print(namelist);
+    printf("%s\n", namelist[1]);
 
     
     

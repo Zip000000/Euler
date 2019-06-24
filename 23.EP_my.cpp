@@ -27,6 +27,7 @@ int main() {
             divsum[i * j] += j;
         }
     }
+    //printf("%d %d \n", divsum[220], divsum[284]);
     int pos[MAX + 5] = {0};
     int sum = 0;
     for(int i = 2; i <= MAX; i++) {

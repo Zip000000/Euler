@@ -31,7 +31,14 @@ int main() {
         }
     }
 
-cout << prime[10001] << endl;
+    cout << prime[10001] << endl;
+    
+    for(int i = 0; i < 10000; i++) {
+        for(int j = 0; j < 20; j++) {
+            printf("%d ", is_prime[i * 20 + j]);
+        }
+        printf("\n");
+    }
     
     return 0;
 }

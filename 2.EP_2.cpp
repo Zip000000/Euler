@@ -25,7 +25,7 @@ int main() {
         if(fib[i] % 2) continue;
         sum += fib[i];
     }
-    printf("%lld\n", sum);
+    printf("n = %d %lld\n", n, sum);
     return 0;
 }
 
