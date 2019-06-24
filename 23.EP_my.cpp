@@ -22,9 +22,9 @@ int main() {
     divsum[0] = divsum[1] = 0;
 
     for(int i = 2; i * i <= MAX; i++) {
-        for(int j = i + 1; i * j <= MAX; j++) {
+        for(int j = i; i * j <= MAX; j++) {
             divsum[i * j] += i;
-            divsum[i * j] += j;
+            if(i != j) divsum[i * j] += j;
         }
     }
     //printf("%d %d \n", divsum[220], divsum[284]);
@@ -37,9 +37,13 @@ int main() {
             //if(i == 12 && j == 12)printf("%d + %d = %d\n", divsum[i], divsum[j], divsum[i]+divsum[j]);
         }
     }
+    
     for(int i = 1; i <= MAX; i++) {
-        if(pos[i] == 0) sum += i, printf("%d\n", i);
+        if(pos[i] == 0) {sum += i; 
+                         //printf("%d ", i);
+                         }
+   
     }
-    printf("%d\n", sum);
+    printf("\n%d\n", sum);
 
 }

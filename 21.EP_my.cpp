@@ -22,9 +22,9 @@ int main() {
     for(int i = 0; i < MAX + 5; i++) prime[i] = 1;
     prime[0] = prime[1] = 0;
     for(int i = 2; i * i <= MAX; i++) {
-        for(int j = i + 1; j * i <= MAX; j++) {
+        for(int j = i; j * i <= MAX; j++) {
             prime[i * j] += i;
-            prime[i * j] += j;
+            if(i != j) prime[i * j] += j;
         }
     }
 
