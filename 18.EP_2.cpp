@@ -14,17 +14,17 @@
 #include<map>
 #include<cmath>
 using namespace std;
-#define MAX 15
+#define MAX 100
 int val[MAX + 5][MAX + 5];
 int keep[MAX + 5][MAX + 5];
 
 int dfs(int i, int j, int n) {
-    if(i + 1 == n) { return val[i][j]; }
+    if(i == n - 1) { return val[i][j]; }
     if(keep[i][j] != 0) return keep[i][j];
     int val1 = dfs(i + 1, j, MAX);
     int val2 = dfs(i + 1, j + 1, MAX);
     if(val1 > val2) keep[i][j] =  val1 + val[i][j];
-    if(val1 < val2) keep[i][j] =  val2 + val[i][j];
+    else keep[i][j] =  val2 + val[i][j];
     return keep[i][j];
 }
 
