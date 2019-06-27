@@ -14,9 +14,7 @@
 #include<map>
 #include<cmath>
 using namespace std;
-
 int n;
-
 void init(int *fact, int *num, int *ans) {
     fact[0] = 1;
     num[0] = 1;
@@ -33,13 +31,11 @@ void show_arr(int *arr) {
     }
     printf("\n");
 }
-
 int main() {
     int max;
     scanf("%d %d", &n, &max);
     int fact[n], num[n], ans[n];
     init(fact, num, ans);
-    
     int step = max - 1;
     for(int i = 0; i < n; i++) {
         if (step >= fact[n-1 - i]) {
