@@ -22,7 +22,7 @@ int dnum[MAX + 5];
 
 int main() {
     for(int M = 2; M <= MAX; M++) {
-        if(is_prime[M] == 0) prime[++prime[0]] == M;
+        if(is_prime[M] == 0) prime[++prime[0]] = M;
         dnum[M] = M + 1;
 
         for(int j = 1; j <= prime[0]; j++) {
@@ -33,8 +33,8 @@ int main() {
                 int tmp_M = M;
                 int tmp_pj = prime[j];
                 while(tmp_M % prime[j] == 0) {
+                    tmp_M = tmp_M / prime[j];
                     tmp_pj *= prime[j];
-                    tmp_M /= prime[j];
                 }
                 dnum[M * prime[j]] = dnum[tmp_M] * dnum[tmp_pj];
             } else {
@@ -48,7 +48,6 @@ int main() {
         if(temp > max) max = temp;
     }
     printf("%d\n", max);
-    
     
     
     return 0;

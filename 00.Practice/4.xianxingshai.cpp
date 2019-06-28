@@ -16,8 +16,9 @@
 using namespace std;
 
 #define MAX_N 200000
-int prime[MAX_N + 5];
+
 int is_prime[MAX_N + 5];
+int prime[MAX_N + 5];
 
 int main() {
 
