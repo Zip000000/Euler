@@ -13,27 +13,33 @@
 #include<vector>
 #include<map>
 #include<cmath>
+#include "22.input.txt"
 using namespace std;
 
-void get_namelist(char namelist[][50]) {
-    int i = 0;
-    while(scanf("%s,", namelist[i]) != EOF) {
-        i++;
-    }
-}
-void print(char namelist[][50]) {
-    for(int i = 0; i < 1; i++) {
-        printf("%s,", namelist[i]);
-    }
+
+int cmp(char *a, char *b) {
+    return strcmp(a, b);
 }
 
 int main() {
-    char namelist[6000][50];
-    get_namelist(namelist);
-    //print(namelist);
-    printf("%s\n", namelist[1]);
-
+    int n = sizeof(str) / 100;
+    char *pstr[6000];
+    for(int i = 0; str[i]; i++) {
+        pstr[i] = str[i];
+    }
+    sort(pstr, pstr+n-1, cmp);
     
+    long long sum = 0;
+    for(int i = 0; i < n; i++) {
+        long long tmp = i + 1;
+        int ta = 0;
+        for(int m = 0; str[i][m]; m++) {
+            ta += str[i][m] - 'A' + 1;
+        }
+        tmp *= ta;
+        sum += tmp;
+    }
+    cout << sum <<endl;
     
     return 0;
 }

@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 12.EP_my.cpp
+	> File Name: 12.EP_my2.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年06月24日 星期一 19时00分39秒
+	> Created Time: 2019年07月02日 星期二 11时43分55秒
  ************************************************************************/
 
 #include<iostream>
@@ -19,28 +19,32 @@ int prime[MAX + 5] = {0};
 int is_prime[MAX + 5] = {0};
 
 int main() {
-    int f[MAX + 5];
+    int f[MAX + 5] = {0};
     f[1] = 1;
-    for(int M = 2; M * 2 <= MAX; M++) {
-        if(!is_prime[M]) {
+    for(int M = 2; M * 2<= MAX; M++) {
+        if(is_prime[M] == 0){
             prime[++prime[0]] = M;
             f[M] = 2;
-        }
+        } 
         for(int j = 1; j <= prime[0]; j++) {
             if(M * prime[j] > MAX) break;
-            is_prime[prime[j] * M] = 1;
+            is_prime[M * prime[j]] = 1;
             if(M % prime[j] == 0) {
-                int cnt = 0;
-                int tmp_m = M;
-                while(tmp_m % prime[j] == 0) tmp_m /= prime[j], cnt++;
-                f[M * prime[j]] = f[tmp_m] * (cnt + 2);
-                break;
+                int cnt = 1;
+                int a = M;
+                while(a % prime[j] == 0) {
+                    a /= prime[j];
+                    cnt++;
+                }
+                f[M * prime[j]] = f[a] * (cnt + 1);
             } else {
-                f[prime[j] * M] = f[prime[j]] * f[M];
+                f[M * prime[j]] = f[M] * f[prime[j]];
+
             }
-            
         }
+
     }
+/*
     long long n = 1;
     while (true) {
         int f_nums;
@@ -54,28 +58,23 @@ int main() {
     }
     printf("n = %lld\n", n);
     cout << n * (n + 1) / 2 <<endl;
+*/
 
+    for(long long n = 1; ; n++) {
+        long long f_num;
+        if(n % 2) {
+            f_num = f[n] * f[(n + 1)/ 2];
+        } else {
+            f_num = f[n / 2] * f[n + 1];
+        }
+        if(f_num > 500) {
+            printf("%lld\n", n * (n + 1) / 2);
+            break;
+        }
+    }
     
-
-
+    
+    
+    
     return 0;
 }
-
-    
-    /*
-    int sum = 0;
-    for(int i =2; i <= 10000; i++) {
-        printf("f[%d] = %d\n", i, f[i]);
-        sum += f[i];
-    }
-    printf("sum = %d\n",sum);
-*/
-    //int tri = 1;
-    //int i = 1;
-    //while(f[tri] < 500) {
-    //    i++;
-    //    tri += i;
-    //}
-    //printf("%d\n", tri);
-
-

@@ -71,27 +71,3 @@ void show_arr(int *arr) {
     }
     printf("\n");
 }
-    //show_arr(fact);
-    //show_arr(num);
-    //show_arr(ans);
-
-
-/*
-int remain_min(int *arr) {
-    for(int i = 0; i < N; i++) {
-        if(arr[i] == 0) continue;
-        //arr[i] = 0;
-        return i;
-    }
-}
-void reset_ans(int n) {
-    int temp[N];
-    for(int i = 0; i < N; i++) {
-        temp[i] = num[i];
-    }
-    //for(int i = n; i < N; i++) {
-        ans[n] = remain_min(temp);
-    //}
-}
-
-*/
